@@ -36,4 +36,13 @@ async function buildLeaderboard() {
   });
 }
 
+function refresh() {
+  const refresh = document.getElementById('refresh');
+  refresh.addEventListener('click', () => {
+    buildLeaderboard();
+  });
+}
+
+refresh();
+
 buildLeaderboard();
