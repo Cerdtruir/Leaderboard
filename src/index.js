@@ -15,3 +15,12 @@ async function post(name, score) {
     },
   );
 }
+
+async function get() {
+  const response = await fetch(
+    'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/3k90Dr27MKo8G1oyFr1s/scores/',
+  );
+  const jsonResponse = await response.json();
+  return jsonResponse.result;
+}
+
