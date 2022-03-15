@@ -24,3 +24,16 @@ async function get() {
   return jsonResponse.result;
 }
 
+const leaderboard = document.getElementById('leaderboard');
+
+async function buildLeaderboard() {
+  leaderboard.innerHTML = '';
+  listOfScores = await get();
+  listOfScores.forEach((score) => {
+    const scoreItem = document.createElement('li');
+    scoreItem.innerHTML = `${score.user}: ${score.score}`;
+    leaderboard.appendChild(scoreItem);
+  });
+}
+
+buildLeaderboard();
