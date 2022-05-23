@@ -10,6 +10,8 @@ A Leaderboard site to add scores and sync with an API
 
 ## Screenshot
 
+![screenshot](./screenshot.png)
+
 
 ## Live Demo
 
