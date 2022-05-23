@@ -15,7 +15,7 @@ A Leaderboard site to add scores and sync with an API
 
 ## Live Demo
 
-[Demo Link](https://cerdtruir.github.io/Leaderboard/)
+[Demo Link](https://silver-begonia-6c9a97.netlify.app/)
 
 
 ## Authors
