@@ -39,18 +39,30 @@ async function buildLeaderboard() {
   });
 }
 
+const checkIfScoreIsValid = (name, score) => {
+  if (name === '' || score === '0') {
+    return false;
+  }
+  return true;
+};
+
+const postScore = async (name, nameValue, score, scoreValue) => {
+  await post(nameValue, scoreValue);
+  name.value = '';
+  score.value = '';
+  buildLeaderboard();
+};
+
 function addScore() {
   const submit = document.getElementById('submit');
   submit.addEventListener('click', async () => {
-    const name = document.getElementById('name').value;
-    const score = document.getElementById('score').value;
-    if (name === '' || score === '0') {
-      return;
+    const name = document.getElementById('name');
+    const score = document.getElementById('score');
+    const nameValue = name.value;
+    const scoreValue = score.value;
+    if (checkIfScoreIsValid(nameValue, scoreValue)) {
+      postScore(name, nameValue, score, scoreValue);
     }
-    await post(name, score);
-    document.getElementById('name').value = '';
-    document.getElementById('score').value = '';
-    buildLeaderboard();
   });
 }
 
