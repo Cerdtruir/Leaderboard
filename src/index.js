@@ -31,6 +31,7 @@ const leaderboard = document.getElementById('leaderboard');
 async function buildLeaderboard() {
   leaderboard.innerHTML = '';
   listOfScores = await get();
+  listOfScores.sort((a, b) => (b.score) - (a.score));
   listOfScores.forEach((score) => {
     const scoreItem = document.createElement('li');
     scoreItem.innerHTML = `${score.user}: ${score.score}`;
